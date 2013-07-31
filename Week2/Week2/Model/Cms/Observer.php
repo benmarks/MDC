@@ -1,5 +1,5 @@
 <?php
-class BlueAcorn_Week2_Model_Cms_Observer extends Mage_Core_Controller_Varien_Action {
+class BlueAcorn_Week2_Model_Cms_Observer extends Mage_Cms_Model_Page {
 	public function cmsRedirect($observer) {
 		$condition = $observer['condition'];
 		if ($condition->getIdentifier() === "home") {

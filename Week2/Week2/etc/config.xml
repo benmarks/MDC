@@ -31,7 +31,7 @@
 				</sales_email_order_template>
 			</email>
 		</template>
-		
+
 		<events>
 			<!-- Create observer for cms_controller_router_match_before -->
 			<cms_controller_router_match_before>
