@@ -1,0 +1,46 @@
+﻿<config>
+  <!-- Module Configuration -->
+  <modules>
+    <BlueAcorn_Week3>
+      <version>0.1.0</version>
+    </BlueAcorn_Week3>
+  </modules>
+  
+  <!-- Frontend Configuration -->
+  <frontend>
+    <layout>
+      <updates>
+        <ba_week3>
+          <file>ba_week3.xml</file>
+        </ba_week3>
+      </updates>
+    </layout>
+		<routers>
+			<!-- Create a frontend router for this module -->
+			<ba_week3>
+				<use>standard</use>
+				<args>
+					<module>BlueAcorn_Week3</module>
+					<frontName>week3</frontName>
+				</args>
+			</ba_week3>
+		</routers>
+  </frontend>
+	
+	<!-- Define Helpers -->
+	<global>
+		<helpers>
+			<ba_week3>
+				<class>BlueAcorn_Week3_Helper</class>
+			</ba_week3>
+		</helpers>
+		
+		<blocks>
+			<page>
+				<rewrite>
+					<html_breadcrumbs>BlueAcorn_Week3_Block_Breadcrumbs</html_breadcrumbs>
+				</rewrite>
+			</page>
+		</blocks>
+	</global>
+</config>

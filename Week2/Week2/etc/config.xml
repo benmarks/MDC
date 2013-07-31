@@ -1,0 +1,69 @@
+<config>
+	<!-- Module Configuration -->
+	<modules>
+		<BlueAcorn_Week2>
+			<version>0.1.0</version>
+		</BlueAcorn_Week2>
+	</modules>
+	
+	<global>
+		<models>
+			<!-- Declare module model location -->
+			<ba_week2>
+				<class>BlueAcorn_Week2_Model</class>
+			</ba_week2>
+			
+			<!-- Rewrite sales/order model -->
+			<sales>
+				<rewrite>
+					<order>BlueAcorn_Week2_Model_Order</order>
+				</rewrite>
+			</sales>
+		</models>
+		
+		<template>
+			<email>
+				<!-- Set email template for sales_email_order_template -->
+				<sales_email_order_template translate="label" module="sales">
+					<label>New Order</label>
+					<file>sales/ba_order_new.html</file>
+					<type>html</type>
+				</sales_email_order_template>
+			</email>
+		</template>
+		
+		<events>
+			<!-- Create observer for cms_controller_router_match_before -->
+			<cms_controller_router_match_before>
+				<observers>
+					<ba_week2_cms_observer>
+						<type>singleton</type>
+						<class>BlueAcorn_Week2_Model_Cms_Observer</class>
+						<method>cmsRedirect</method>
+					</ba_week2_cms_observer>
+				</observers>
+			</cms_controller_router_match_before>
+		</events>
+		
+		<rewrite>
+			<!-- Create a rewrite for the customer account controller -->
+			<ba_week2_logout_rewrite>
+				<from><![CDATA[#^/customer/account/#]]></from>
+				<to>/week2/customer_account/</to>
+			</ba_week2_logout_rewrite>
+		</rewrite>
+	</global>
+	
+	<frontend>
+		<routers>
+			<!-- Create a frontend router for this module -->
+			<ba_week2>
+				<use>standard</use>
+				<args>
+					<module>BlueAcorn_Week2</module>
+					<frontName>week2</frontName>
+				</args>
+			</ba_week2>
+		</routers>
+	</frontend>
+</config>
