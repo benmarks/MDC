@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <BlueAcorn_Week4>
+            <active>true</active>
+            <codePool>local</codePool>
+        </BlueAcorn_Week4>
+    </modules>
+</config>

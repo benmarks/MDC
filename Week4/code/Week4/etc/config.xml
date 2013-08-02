@@ -1,0 +1,47 @@
+<config>
+    <!-- Module Configuration -->
+    <modules>
+        <BlueAcorn_Week4>
+            <version>0.1.0</version>
+        </BlueAcorn_Week4>
+    </modules>
+
+    <global>
+        <models>
+            <ba_week4>
+                <class>BlueAcorn_Week4_Model</class>
+                <resourceModel>ba_week4_resource</resourceModel>
+            </ba_week4>
+            <ba_week4_resource>
+                <class>BlueAcorn_Week4_Model_Resource</class>
+                <entities>
+                    <comment>
+                        <table>ba_comments</table>
+                    </comment>
+                </entities>
+            </ba_week4_resource>
+        </models>
+        <resources>
+            <!-- Add setup resource -->
+            <ba_week4_setup>
+                <setup>
+                    <module>BlueAcorn_Week4</module>
+                    <class>BlueAcorn_Week4_Model_Resource_Setup</class>
+                </setup>
+            </ba_week4_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <!-- Add frontend routers for module -->
+        <routers>
+            <ba_week4>
+                <use>standard</use>
+                <args>
+                    <module>BlueAcorn_Week4</module>
+                    <frontName>week4</frontName>
+                </args>
+            </ba_week4>
+        </routers>
+    </frontend>
+</config>
