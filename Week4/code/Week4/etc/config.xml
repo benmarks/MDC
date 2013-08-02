@@ -2,11 +2,14 @@
     <!-- Module Configuration -->
     <modules>
         <BlueAcorn_Week4>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </BlueAcorn_Week4>
     </modules>
 
     <global>
+        <blocks>
+            <class>BlueAcorn_Week4_Block</class>
+        </blocks>
         <models>
             <ba_week4>
                 <class>BlueAcorn_Week4_Model</class>
@@ -43,5 +46,12 @@
                 </args>
             </ba_week4>
         </routers>
+        <layout>
+            <updates>
+                <ba_week3>
+                    <file>ba_week4.xml</file>
+                </ba_week3>
+            </updates>
+        </layout>
     </frontend>
 </config>
